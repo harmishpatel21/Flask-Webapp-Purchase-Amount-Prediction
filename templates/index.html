@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="content-section">
+	<form name="predictForm" method="POST" action="/predict" onsubmit="return validateForm()">
+		<div class="form-group">
+			<div class="row">
+			 	<div class="col-lg-6">
+			 		<br><br><br>
+			 		<h2>TOP USERS FOR PRODUCT</h2>
+			 		<br>
+					<br>
+					<label>TOP USER</label>
+					<h3>{% if label %} {{ label }} {% endif %}</h3>
+				</div>
+				<div class="col-lg-6">
+              		<div class="row">
+						<div class="col-lg-6 mx-auto">
+							<br>
+							<label>ENTER PRODUCT_ID</label><br>
+								<input type="string" name="Product_ID">
+									<br><br>
+							<label>NUMBER OF USER</label>
+							<input type="string" name="Number">
+							<br><br><br><br>
+							<button class="btn btn-lg btn-primary" type="submit">PREDICT TOP USERS</button>
+							<br><br>
+						</div>
+					</div>
+                </div>
+			</div>
+		</div>
+  	</form>
+
+	<form name="predictForm" method="POST" action="/graph" onsubmit="return validateForm()">
+		<div class="form-group">
+			<div class="row">
+			 	<div class="col-lg-6">
+			 		<h2>TOP CATEGORIES PRODUCTS FOR USER</h2>
+			 		<br>
+					<br>
+					<p>{{ name }}</p>
+					<img src={{ url}} alt="graph">
+				</div>
+				<div class="col-lg-6">
+              		<div class="row">
+						<div class="col-lg-6 mx-auto">
+							<br>
+							<label>ENTER USER_ID</label><br>
+								<input type="string" name="User_ID">
+									<br><br><br>
+							<button class="btn btn-lg btn-primary" type="submit">SHOW CATEGORIES</button>
+							<br><br>
+						</div>
+					</div>
+                </div>
+			</div>
+		</div>
+  	</form>
+</section>
+{% endblock %}
