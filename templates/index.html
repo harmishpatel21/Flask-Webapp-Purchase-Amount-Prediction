@@ -1,16 +1,37 @@
 {% extends "layout.html" %}
 {% block content %}
+<style>
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td{
+	text-align: left;
+	padding: 8px;
+}
+tr:nth-child(even){
+	background-color: #008080;
+}
+</style>
+
 <section class="content-section">
 	<form name="predictForm" method="POST" action="/predict" onsubmit="return validateForm()">
 		<div class="form-group">
 			<div class="row">
 			 	<div class="col-lg-6">
-			 		<br><br><br>
+			 		<br>
 			 		<h2>TOP USERS FOR PRODUCT</h2>
 			 		<br>
 					<br>
-					<label>TOP USER</label>
-					<h3>{% if label %} {{ label }} {% endif %}</h3>
+					<table border = 1>
+						<th>TOP USERS</th>
+						{% for i in label %}
+						<tr>
+							<td>{{ i }}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					<!-- <h3>{% if label %} {{ label }} {% endif %}</h3> -->
 				</div>
 				<div class="col-lg-6">
               		<div class="row">
