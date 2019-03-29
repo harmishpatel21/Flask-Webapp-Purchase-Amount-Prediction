@@ -7,6 +7,13 @@ This application basically used the black-friday dataset which consist of User d
 * flask
 
 ### Required Packages
+Required packages is mentioned in requirements.txt
+Or you can manually install packages.
+
+* Install Requirer Packages
+```
+python3 -m pip install -r requirements.txt
+```
 
 * pandas
 ```
